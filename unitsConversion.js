@@ -5,7 +5,7 @@ window.onload = function() {
         var item2 = document.getElementsByName("selector")[1].options[document.getElementsByName("selector")[1].selectedIndex].value
 		var longitud = new Longitud(document.getElementById("valor"),item1,item2);
         document.getElementById("ResultText").value = longitud.calculate();
-		document.getElementById("units").value = item2;
+		document.getElementsByClassName("units")[0].innerHTML = item2;
 		
 	};
 };
@@ -13,7 +13,9 @@ function Longitud(values,firstUnit,secondUnit) {
     this.values = values;
     this.firstUnit = typeof firstUnit !== 'undefined' ? firstUnit : "";
     this.secondUnit = typeof secondUnit !== 'undefined' ? secondUnit : "";
-    Longitud.prototype = {
+
+};
+ Longitud.prototype = {
         isNumeric: function( n ) {
             return !isNaN(parseFloat(n)) && isFinite(n);
         },
@@ -45,7 +47,7 @@ function Longitud(values,firstUnit,secondUnit) {
                         secondValue = 1000 ;
                         break;
                };
-               return firstValue*secondValue
+               return this.values*firstValue*secondValue
             }else{
                 alert("please enter a number");
                 this.values = null;
@@ -59,4 +61,3 @@ function Longitud(values,firstUnit,secondUnit) {
         }
 
     };
-};
