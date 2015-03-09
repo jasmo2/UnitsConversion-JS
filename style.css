@@ -1,0 +1,29 @@
+.form{
+	display:inline-block;
+}
+.form select {
+  width: 23%;
+}
+.form .en {
+    margin: 0 5px;
+}
+.form input#valor {
+    width: 15%;
+}
+.result {
+    position: relative;
+}
+.result label {
+    margin-right: -4px;
+    letter-spacing: 3px;
+}
+
+.result input#ResultText {
+    width: 16%;
+    text-align: center;
+}
+.result span{
+    position: absolute;
+    top: 2px;
+    left: 72px;
+}
